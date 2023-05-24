@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class KullaniciGirisi {
+    public static void main(String[] args) {
+
+        String userName, password, cevap, yeniSifre;
+
+        Scanner girdi = new Scanner(System.in);
+
+        System.out.print("Kullanıcı adınızı Giriniz :");
+        userName = girdi.nextLine();
+
+        System.out.print("Şifrenizi Giriniz :");
+        password = girdi.nextLine();
+
+        if (userName.equals("qwer") && password.equals("abc123")) {
+            System.out.print("Bilgileriniz Doğru! \n Giriş Yaptınız");
+        } else {
+            System.out.println("Kullanıcı Adınız veya Şifreniz Yanlış !");
+            System.out.println("Yeni şifre belirlemek ister misiniz? e - h");
+            cevap = girdi.nextLine();
+            if (cevap.equals("e")) {
+                System.out.print("Lütfen yeni şifrenizi giriniz :");
+                yeniSifre = girdi.nextLine();
+
+                if (yeniSifre.equals("password")) {
+                    System.out.print("Eski Şifrenizden Farklı Bir şifre Giriniz.");
+                } else {
+                    System.out.print("Şifre Başarı ile Oluşturuldu");
+                }
+            } else if (cevap.equals("h")) {
+                System.out.print("Giriş yapılamadı. Şifrenizi tekrar giriniz.");
+            } else {
+                System.out.print("Geçersiz seçenek girdiniz");
+            }
+
+        }
+    }
+}
